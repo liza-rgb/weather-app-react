@@ -5,9 +5,18 @@ import "./WeatherSearch.css";
 
 export default function WeatherSearch() {
     const [city, setCity] = useState("");
-    const [currentWeather, setCurrentWeather] = useState({});
+    const [currentWeather, setCurrentWeather] = useState({
+        city: "Kyiv",
+        country: "UA",
+        timestamp: 1010010 * 1000,
+        description: "clear sky",
+        temperature: 15,
+        cloudiness: 87,
+        humidity: 35,
+        wind: 1.21,
+        iconUrl: `http://openweathermap.org/img/wn/01d@2x.png`
+    });
     const [forecast, setForecast] = useState([]);
-    const [isLoaded, setIsLoaded] = useState(0);
     
     function getForecast(coordinates) {
         const apiKey = "d0acf7f4fbfe6d9b905827e17faae31d";
@@ -31,7 +40,6 @@ export default function WeatherSearch() {
     }
     
     function showWeather(response) {
-        setIsLoaded(1);
         console.log(response);
         setCurrentWeather({
             city: response.data.name,
@@ -86,18 +94,6 @@ export default function WeatherSearch() {
         const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         let day = date.getDay();
         return `${days[day]} ${hours}:${mins}`
-    }
-
-    function initiateApp() {
-        setCity("Kyiv");
-        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?";
-        const apiKey = "d0acf7f4fbfe6d9b905827e17faae31d";
-        const units = "metric";
-      
-        axios
-            .get(`${apiUrl}q=${city}&units=${units}&appid=${apiKey}`)
-            .then(showWeather)
-            .catch(alertNotFound);
     }
 
     const currentWeatherElement = (
@@ -173,7 +169,7 @@ export default function WeatherSearch() {
     return (
         <div className="WeatherSearch">
             <div className="card">
-                {city ? cardElement : loadingElement}
+                {cardElement}
             </div>
         </div>
     );
