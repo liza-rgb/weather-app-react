@@ -1,0 +1,116 @@
+.card {
+    background-color: var(--color-foreground);
+    box-shadow: 0px 0px 5px var(--color-border);
+    border: none;
+    border-radius: 15px;
+    max-width: 600px;
+    padding: 10px;
+    margin: 60px auto;
+}
+
+.shortcut-bar a {
+    text-decoration: none;
+    margin-right: 20px;
+    color: var(--color-accent-1);
+    font-size: 18px;
+}
+
+.shortcut-bar {
+    margin-bottom: 15px;
+}
+
+.search-bar {
+    margin-bottom: 15px;
+}
+
+.search-bar * {
+    display: inline;
+    border-radius: 0px;
+}
+
+.search-bar input {
+    width: 70%;
+}
+
+.search-bar .btn-search {
+    background-color: var(--color-accent-2);
+    border-color: var(--color-accent-2);
+    color: var(--color-background);
+}
+
+.search-bar .btn-current {
+    background-color: var(--color-accent-1);
+    border-color: var(--color-accent-1);
+    color: var(--color-background);
+    font-weight: 600;
+}
+
+.weather-data-header {
+    color: var(--color-font-1);
+    font-weight: 200;
+}
+
+.weather-data-header h1, .weather-data-header h2 {
+    color: var(--color-font-1);
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+
+.weather-data-header h2::first-letter {
+    text-transform: capitalize;
+}
+
+.weather-data {
+    margin-bottom: 15px;
+}
+
+.weather-data img {
+    width: 85px;
+    height: 85px;
+}
+
+.weather-data ul {
+    list-style-type: none;
+    margin-bottom: 0px;
+    font-size: 15px;
+}
+
+.weather-data li span {
+    color: var(--color-accent-2);
+    font-weight: 600;
+}
+
+.temp-now {
+    font-size: 60px;
+    font-weight: 600;
+}
+
+.temp-now sup {
+    font-size: 40px;
+    bottom: 0px;
+}
+
+.forecast {
+    text-align: center;
+    font-size: 12px;
+}
+
+.forecast .forecast-day {
+    color: var(--color-font-1);
+}
+
+.forecast .temp-max {
+    color: #000;
+}
+
+.forecast .temp-min {
+    color: var(--color-font-2);
+}
+
+.forecast img {
+    width: 50px;
+}
+
+
+
+
