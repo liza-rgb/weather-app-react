@@ -26,7 +26,7 @@ export default function WeatherSearch() {
 
     function showForecast(response) {
         const forecast = [];
-        response.data.daily.map((day, index) => {
+        response.data.daily.forEach((day, index) => {
             if (index < 6) {
                 forecast.push({
                     timestamp: day.dt * 1000,
@@ -162,10 +162,6 @@ export default function WeatherSearch() {
                 {forecastElement}
             </div>
         </div>
-    );
-
-    const loadingElement = (
-        <p className="m-0 text-center">The App is loading... Please wait a moment...</p>
     );
 
     return (
