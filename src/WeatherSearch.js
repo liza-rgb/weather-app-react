@@ -140,25 +140,27 @@ export default function WeatherSearch() {
     );
 
     const cardElement = (
-        <div className="card-body">
-            <div className="shortcut-bar">
-                <a href="/">Kyiv</a>
-                <a href="/">Bucha</a>
-                <a href="/">Hostomel</a>
-                <a href="/">Kharkiv</a>
-                <a href="/">Mariupol</a>
+        <div className="card">
+            <div className="card-body">
+                <div className="shortcut-bar">
+                    <a href="/">Kyiv</a>
+                    <a href="/">Bucha</a>
+                    <a href="/">Hostomel</a>
+                    <a href="/">Kharkiv</a>
+                    <a href="/">Mariupol</a>
+                </div>
+                <div className="search-bar">
+                    <form onSubmit={handleSubmit}>
+                        <input type="search" className="form-control" placeholder="type a city ..." onChange={updateCity} />
+                        <button className="btn btn-search" type="submit">
+                            <i className="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                    <button className="btn btn-current">Current</button>
+                </div>
+                {currentWeatherElement}
+                {forecastElement}
             </div>
-            <div className="search-bar">
-                <form onSubmit={handleSubmit}>
-                    <input type="search" className="form-control" placeholder="type a city ..." onChange={updateCity} />
-                    <button className="btn btn-search" type="submit">
-                        <i className="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                </form>
-                <button className="btn btn-current">Current</button>
-            </div>
-            {currentWeatherElement}
-            {forecastElement}
         </div>
     );
 
@@ -168,8 +170,9 @@ export default function WeatherSearch() {
 
     return (
         <div className="WeatherSearch">
-            <div className="card">
-                {cardElement}
+            {cardElement}
+            <div className="credentials">
+                <a href="https://github.com/liza-rgb/weather-app-react">Open-sourced</a> by Liza Stoliarchuk
             </div>
         </div>
     );
